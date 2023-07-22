@@ -1,24 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
-
-body {
+* {
     margin: 0;
     box-sizing: border-box;
-}
-
-.header.f.aic.jcb{
-    width: 100%;
-    height: 80px;
-    background: white;
-    position: fixed;
-    border-bottom: 1px solid #242424;
-    padding: 0 45px;
-    box-sizing: border-box;
-    z-index: 1;
+    font-family: "Copyright Klim Type Foundry", sans-serif;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .f {
@@ -37,7 +31,8 @@ a {
     position: relative;
 }
 
-.long {
+.link {
+    position: relative;
     display: inline-block;
 }
 
@@ -58,15 +53,22 @@ a {
     transform: scaleX(1);
 }
 
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+/*-----HEADER-----*/
+
+.header{
+    width: 100%;
+    height: 80px;
+    background: white;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #242424;
+    padding: 0 45px;
+    box-sizing: border-box;
+    z-index: 10;
 }
 
 .nav-panel{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     height: 100%;
 }
 
@@ -75,8 +77,8 @@ ul{
     margin: 0 15px;
 }
 
-.nav-panel-item a {
-    position: relative;
+.nav-panel-item:first-child {
+    margin-left: 0;
 }
 
 .nav-panel-item .link::after {
@@ -88,26 +90,11 @@ ul{
     bottom: -4px;
 }
 
-.nav-panel-item:first-child {
-    margin-left: 0;
-}
-
-.dropdown-btn {
-    display: flex;
-}
-
 .arrow-icon {
     width: 10px;
-    display: inline-flex;
-    align-items: center;
     margin-left: 10px;
+    display: inline-flex;
     justify-content: center;
-}
-
-.nav-panel-item {
-    display: flex;
-    align-items: center;
-    position: relative;
 }
 
 .nav-panel-item:hover .arrow-icon {
@@ -118,10 +105,11 @@ ul{
 .dropdown-content {
     display: block;
     position: absolute;
+    background-color: white;
     top: 80px;
     left: -25px;
     border: 1px solid #e6e6e6;
-    width: 110px;
+    width: 160px;
     padding: 20px 25px 23px 20px;
     opacity: 0;
     visibility: hidden;
@@ -129,7 +117,7 @@ ul{
 
 .dropdown-content li {
     margin-bottom: 17px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .dropdown-content li:last-child {
@@ -137,7 +125,7 @@ ul{
 }
 
 .nav-panel li:hover > ul,
-.nav-panel li ul:hover {
+.dropdown-content:hover {
     visibility: visible;
     opacity: 1;
     display: block;
@@ -146,17 +134,15 @@ ul{
 
 .logo-link img{
     height: 30px;
-    width: auto;
 }
 
 .store-link {
     background-color: white;
     border: 1px solid #eb5757;
     border-radius: 30px;
-    padding: 8px 21px 8px;
+    padding: 7px 22px 8px;
     margin: 0 3px 0 7px ;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .store-link:hover {
@@ -166,100 +152,140 @@ ul{
     transition: all .25s ease;
 }
 
-/*.back-straw-block {*/
-/*    height: 777px;*/
-/*    overflow: clip;*/
-/*    position: relative;*/
-/*    top: -210px*/
-/*}*/
-/*.back-straw-img {*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*}*/
+/*-----MAIN-----*/
+
 .main {
-    height: 1000px;
+    margin-top: 80px
 }
 
+.back-straw-block {
+    height: 75vh;
+    background-image: url("https://oishii.com/cdn/shop/files/2023.02_JFONG_Oishii_Koyo_Berry_High_Res_002_2160x.jpg?v=1677255226");
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+    z-index: 0;
+}
+
+.back-straw-block::before {
+    content: "";
+    background: black;
+    position: absolute;
+    opacity: 0.25;
+    height: 100%;
+    width: 100%;
+}
+
+.introducing-outer-container {
+    margin: 0 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.introducing-block {
+    padding: 60px 0;
+    color: white;
+}
+
+.introducing-block h1{
+    font-family: "Tiempos Headline Light", serif;
+    font-weight: 100;
+    font-size: 40px;
+    display: block;
+    width: 380px;
+    margin-bottom: 5px;
+}
+
+.introducing-block p {
+    font-size: 14px;
+    display: block;
+    width: 380px;
+    margin-bottom: 20px;
+}
+
+.introducing-block a {
+    font-size: 14px;
+}
+
+.introducing-block a.link::after {
+    bottom: -5px;
+}
+
+/*-----FOOTER-----*/
 
 .footer {
     background-color: #da2924;
     color: white;
-    position: relative;
-    bottom: 0;
-    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
 }
 
-.footer-nav-wrapper {
+.footer-container {
     padding: 60px 0;
 }
 
-.footer-nav-block {
+.footer-block {
     margin: 0 40px;
 }
 
-.footer-nav-block > div:nth-child(n){
+.footer-block > div{
     padding: 0 12px;
 }
 
-.footer-nav-logo-block {
+.footer-logo-block {
     width: 23%;
 }
 
-.footer-nav-logo-img {
+.footer-logo-img {
     width: 150px;
-    height: auto;
 }
 
-.footer-nav-menu-block {
+.footer-lists-block {
     width: 34%;
     grid-column-gap: 14px;
     column-gap: 14px;
 }
 
-.footer-nav-menu-block ul{
+.footer-lists-block ul{
     flex: 1 1 50%
 }
 
-.footer-nav-menu-block ul li{
+.footer-lists-block ul li{
     padding-bottom: 17px;
 }
 
-.footer-nav-menu-block ul li a{
-    position: relative;
+.footer-lists-block ul li:first-child{
+    font-weight: 600;
+    font-size: 18px;
 }
 
-.footer-nav-menu-block ul li:first-child{
-    font-size: 15px;
-}
-
-.footer-newsletter-form-block {
+.footer-sign-up-form-block {
     width: 43%;
 }
 
 .form-header p:first-child {
-    font-size: 20px;
+    font-size: 22px;
     margin: 0 0 20px
 }
 
-.form-header-content {
+.form-header-description {
     width: 335px;
-    font-size: 12px;
+    font-family: "Pop";
+    font-size: 14px;
     line-height: 17px;
 }
 
 .email-number-form {
-    padding: 7px 0 7px;
+    padding: 14px 0;
 }
 
 .email-number-form input {
-    width: 34%;
+    width: 42%;
     background: #da2924;
     border: 1px solid white;
     border-radius: 30px;
     padding: 12px 20px 12px 15px;
     font-family: inherit;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #email:hover {
@@ -268,27 +294,32 @@ ul{
 
 .email-number-form input::placeholder {
     color: white;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .sign-up-button {
-    background-color: #da2924;
+    background: none;
+    border: none;
     color: white;
-    border-style: none;
     font-family: inherit;
-    font-size: 12px;
+    font-size: 14px;
     padding: 0;
     text-decoration: underline;
     text-underline-offset: 6px;
 }
 
+input:focus-visible {
+    outline: none;
+}
+
 .form-ending {
-    font-size: 10px;
+    font-family: "Arial", sans-serif;
+    font-size: 11px;
     line-height: 15px;
 }
 
-.footer-bottom-wrapper {
-    padding: 25px 0 25px;
+.footer-bottom-container {
+    padding: 25px 0;
     border-top: 1px solid white;
 }
 
@@ -300,7 +331,7 @@ ul{
     margin-right: 22px;
 }
 
-.social-networks a svg {
+.social-networks svg {
     width: 16px;
 }
 
@@ -309,15 +340,10 @@ ul{
 }
 
 .middle-part {
-    display: flex;
     grid-column-gap: 23px;
     column-gap: 23px;
 }
 
-.middle-part div a {
-    position: relative;
-}
-
-.right-part .dot {
+.dot {
     margin: 0 3px;
 }
