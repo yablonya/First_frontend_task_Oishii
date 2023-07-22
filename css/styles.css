@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header.f.aic.jcb{
+    width: 100%;
+    height: 80px;
+    background: white;
+    position: fixed;
+    border-bottom: 1px solid #242424;
+    padding: 0 45px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.f {
+    display: flex;
+}
+
+.aic {
+    align-items: center;
+}
+
+.jcb {
+    justify-content: space-between;
+}
+
+.rel {
+    position: relative;
+}
+
+.long {
+    display: inline-block;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: all 0.5s ease;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-panel{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    height: 100%;
+}
+
+.nav-panel > li {
+    height: 100%;
+    margin: 0 15px;
+}
+
+.nav-panel-item a {
+    position: relative;
+}
+
+.nav-panel-item .link::after {
+    background-color: black;
+}
+
+.nav-panel-item ul li .link::after {
+    background-color: #da2924;
+    bottom: -4px;
+}
+
+.nav-panel-item:first-child {
+    margin-left: 0;
+}
+
+.dropdown-btn {
+    display: flex;
+}
+
+.arrow-icon {
+    width: 10px;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+    justify-content: center;
+}
+
+.nav-panel-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-panel-item:hover .arrow-icon {
+    transform: rotateX(180deg);
+    transition: all 0.1s ease;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: -25px;
+    border: 1px solid #e6e6e6;
+    width: 110px;
+    padding: 20px 25px 23px 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dropdown-content li {
+    margin-bottom: 17px;
+    font-size: 14px;
+}
+
+.dropdown-content li:last-child {
+    margin-bottom: 0;
+}
+
+.nav-panel li:hover > ul,
+.nav-panel li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.logo-link img{
+    height: 30px;
+    width: auto;
+}
+
+.store-link {
+    background-color: white;
+    border: 1px solid #eb5757;
+    border-radius: 30px;
+    padding: 8px 21px 8px;
+    margin: 0 3px 0 7px ;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.store-link:hover {
+    background-color: #da2924;
+    border-color: #da2924;
+    color: white;
+    transition: all .25s ease;
+}
+
+/*.back-straw-block {*/
+/*    height: 777px;*/
+/*    overflow: clip;*/
+/*    position: relative;*/
+/*    top: -210px*/
+/*}*/
+/*.back-straw-img {*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*}*/
+.main {
+    height: 1000px;
+}
+
+
+.footer {
+    background-color: #da2924;
+    color: white;
+    position: relative;
+    bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.footer-nav-wrapper {
+    padding: 60px 0;
+}
+
+.footer-nav-block {
+    margin: 0 40px;
+}
+
+.footer-nav-block > div:nth-child(n){
+    padding: 0 12px;
+}
+
+.footer-nav-logo-block {
+    width: 23%;
+}
+
+.footer-nav-logo-img {
+    width: 150px;
+    height: auto;
+}
+
+.footer-nav-menu-block {
+    width: 34%;
+    grid-column-gap: 14px;
+    column-gap: 14px;
+}
+
+.footer-nav-menu-block ul{
+    flex: 1 1 50%
+}
+
+.footer-nav-menu-block ul li{
+    padding-bottom: 17px;
+}
+
+.footer-nav-menu-block ul li a{
+    position: relative;
+}
+
+.footer-nav-menu-block ul li:first-child{
+    font-size: 15px;
+}
+
+.footer-newsletter-form-block {
+    width: 43%;
+}
+
+.form-header p:first-child {
+    font-size: 20px;
+    margin: 0 0 20px
+}
+
+.form-header-content {
+    width: 335px;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.email-number-form {
+    padding: 7px 0 7px;
+}
+
+.email-number-form input {
+    width: 34%;
+    background: #da2924;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 12px 20px 12px 15px;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+#email:hover {
+    border-color: black;
+}
+
+.email-number-form input::placeholder {
+    color: white;
+    font-weight: 600;
+}
+
+.sign-up-button {
+    background-color: #da2924;
+    color: white;
+    border-style: none;
+    font-family: inherit;
+    font-size: 12px;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.form-ending {
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.footer-bottom-wrapper {
+    padding: 25px 0 25px;
+    border-top: 1px solid white;
+}
+
+.footer-bottom-block {
+    padding: 0 50px;
+}
+
+.social-networks li {
+    margin-right: 22px;
+}
+
+.social-networks a svg {
+    width: 16px;
+}
+
+.social-networks .icon-tiktok svg {
+    width: 13px;
+}
+
+.middle-part {
+    display: flex;
+    grid-column-gap: 23px;
+    column-gap: 23px;
+}
+
+.middle-part div a {
+    position: relative;
+}
+
+.right-part .dot {
+    margin: 0 3px;
+}
