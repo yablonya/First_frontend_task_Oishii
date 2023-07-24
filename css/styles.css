@@ -46,11 +46,15 @@ ul{
     background-color: white;
     transform: scaleX(0);
     transform-origin: center left;
-    transition: all 0.5s ease;
+    transition: all 0.8s ease;
 }
 
 .link:hover::after {
     transform: scaleX(1);
+}
+
+.front {
+    z-index: 1;
 }
 
 /*-----HEADER-----*/
@@ -60,11 +64,11 @@ ul{
     height: 80px;
     background: white;
     position: fixed;
+    z-index: 10;
     top: 0;
     border-bottom: 1px solid #242424;
     padding: 0 45px;
     box-sizing: border-box;
-    z-index: 10;
 }
 
 .nav-panel{
@@ -154,11 +158,7 @@ ul{
 
 /*-----MAIN-----*/
 
-.main {
-    margin-top: 80px
-}
-
-.back-straw-block {
+.introducing-back-straw-block {
     height: 75vh;
     background-image: url("https://oishii.com/cdn/shop/files/2023.02_JFONG_Oishii_Koyo_Berry_High_Res_002_2160x.jpg?v=1677255226");
     background-size: cover;
@@ -167,24 +167,39 @@ ul{
     z-index: 0;
 }
 
-.back-straw-block::before {
+.overlay::before {
     content: "";
     background: black;
     position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
     opacity: 0.25;
     height: 100%;
     width: 100%;
 }
 
 .introducing-outer-container {
+    padding-top: 80px;
+}
+
+.introducing-inner-container {
     margin: 0 50px;
     position: relative;
-    z-index: 1;
 }
 
 .introducing-block {
     padding: 60px 0;
     color: white;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 .introducing-block h1{
@@ -203,12 +218,93 @@ ul{
     margin-bottom: 20px;
 }
 
-.introducing-block a {
+.u-link {
     font-size: 14px;
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 9px;
+    padding: 3px 0;
 }
 
-.introducing-block a.link::after {
-    bottom: -5px;
+.u-link:hover {
+    text-decoration: none;
+}
+
+.u-link.link::after {
+    bottom: -4px;
+}
+
+.press-logo-container {
+    padding: 51px 0;
+}
+
+.press-logo-block {
+    margin: 0 43px;
+    justify-content: center;
+}
+
+.press-logo-item {
+    margin: 8px 0;
+    padding: 0 40px;
+}
+
+.press-logo-item img {
+    height: 26px;
+}
+
+.berries-pair {
+    margin-bottom: 50px;
+    color: white;
+}
+
+.berries-pair-container {
+    margin: 0 50px
+}
+
+.container {
+    padding: 60px 20px;
+    width: 50%;
+}
+
+.background-pic {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.background-pic img {
+    width: 100%;
+}
+
+.content {
+    margin: 0 100px;
+    text-align: center;
+}
+
+.content h2 {
+    font-weight: 100;
+    font-size: 32px;
+    z-index: 1;
+    font-family: "Tiempos Headline Light", serif;
+    margin-bottom: 5px;
+}
+
+.content p {
+    font-size: 15px;
+    padding-bottom: 30px;
+}
+
+.content a {
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 9px;
+    margin-top: 555px;
 }
 
 /*-----FOOTER-----*/
@@ -269,7 +365,6 @@ ul{
 
 .form-header-description {
     width: 335px;
-    font-family: "Pop";
     font-size: 14px;
     line-height: 17px;
 }
