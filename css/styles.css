@@ -191,6 +191,9 @@ ul{
 .introducing-block {
     padding: 60px 0;
     color: white;
+}
+
+.delay {
     opacity: 0;
     animation: fadeIn 0.3s ease-in-out forwards;
     animation-delay: 1s;
@@ -252,18 +255,26 @@ ul{
     height: 26px;
 }
 
-.berries-pair {
-    margin-bottom: 50px;
+.section{
+    margin-bottom: 60px;
+}
+
+.wt {
     color: white;
 }
 
-.berries-pair-container {
+.pair-container {
     margin: 0 50px
 }
 
-.container {
+.single-part-container {
     padding: 60px 20px;
     width: 50%;
+    height: 800px;
+}
+
+.single-part-container.overlay::before {
+    opacity: 0.2;
 }
 
 .background-pic {
@@ -279,6 +290,12 @@ ul{
 
 .background-pic img {
     width: 100%;
+    position: absolute;
+    top: -20px
+}
+
+.background-pic.omakase img  {
+    top: -60px
 }
 
 .content {
@@ -295,7 +312,7 @@ ul{
 }
 
 .content p {
-    font-size: 15px;
+    font-size: 14px;
     padding-bottom: 30px;
 }
 
@@ -304,7 +321,73 @@ ul{
     display: inline-block;
     text-decoration: underline;
     text-underline-offset: 9px;
-    margin-top: 555px;
+    margin-top: 550px;
+}
+
+.koyo-glass img {
+    position: absolute;
+    top: -145px
+}
+
+.washington {
+    background-color: #f0ece1;
+    padding: 120px;
+}
+
+.washington h2 {
+    font-weight: 100;
+    font-size: 32px;
+    font-family: "Tiempos Headline Light", serif;
+    margin-bottom: 10px;
+}
+
+.washington p {
+    font-size: 14px;
+}
+
+.washington a,
+.oishii-berries a {
+    display: inline-block;
+    text-decoration: underline #da2924;
+    text-underline-offset: 9px;
+    padding: 5px 0;
+    margin-top: 15px;
+}
+
+.washington a.link::after,
+.oishii-berries a.link::after {
+    background-color: #da2924;
+    bottom: -3px;
+}
+
+.oishii-berries {
+    padding: 30px 120px 30px 50px;
+}
+
+.oishii-berries h2 {
+    font-weight: 100;
+    font-size: 32px;
+    font-family: "Tiempos Headline Light", serif;
+    margin-bottom: 10px;
+}
+
+.oishii-berries h3 {
+    font-weight: 100;
+    font-size: 24px;
+    font-family: "Tiempos Headline Light", serif;
+}
+
+.oishii-berries a {
+    margin-top: 0;
+}
+
+.oishii-berries a.link::after {
+    bottom: -2px;
+}
+
+.oishii-berries .background-pic img {
+    position: absolute;
+    top: -60px;
 }
 
 /*-----FOOTER-----*/
