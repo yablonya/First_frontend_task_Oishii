@@ -15,6 +15,11 @@ ul{
     padding: 0;
 }
 
+h1, h2, h3 {
+    font-weight: 100;
+    font-family: "Tiempos Headline Light", serif;
+}
+
 .f {
     display: flex;
 }
@@ -53,22 +58,71 @@ ul{
     transform: scaleX(1);
 }
 
-.front {
-    z-index: 1;
+.overlay::before {
+    content: "";
+    background: black;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    opacity: 0.25;
+    height: 100%;
+    width: 100%;
+}
+
+.delay {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.u-link {
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 9px;
+    padding: 5px 0;
+}
+
+.u-link:hover {
+    text-decoration: none;
+}
+
+.u-link.link::after {
+    bottom: -2px;
+}
+
+.background-pic img {
+    width: 100%;
+    position: absolute;
+}
+
+.hi {
+    height: inherit;
 }
 
 /*-----HEADER-----*/
-
-.header{
+.header {
     width: 100%;
-    height: 80px;
-    background: white;
     position: fixed;
     z-index: 10;
     top: 0;
     border-bottom: 1px solid #242424;
-    padding: 0 45px;
-    box-sizing: border-box;
+    background: white;
+}
+
+.header-container {
+    height: 80px;
+}
+
+.header-block {
+    margin: 0 50px;
+    height: 100%;
 }
 
 .nav-panel{
@@ -78,7 +132,7 @@ ul{
 
 .nav-panel > li {
     height: 100%;
-    margin: 0 15px;
+    margin: 0 13px;
 }
 
 .nav-panel-item:first-child {
@@ -110,7 +164,7 @@ ul{
     display: block;
     position: absolute;
     background-color: white;
-    top: 80px;
+    top: 81px;
     left: -25px;
     border: 1px solid #e6e6e6;
     width: 160px;
@@ -145,7 +199,7 @@ ul{
     border: 1px solid #eb5757;
     border-radius: 30px;
     padding: 7px 22px 8px;
-    margin: 0 3px 0 7px ;
+    margin-left: 25px;
     font-size: 14px;
 }
 
@@ -163,20 +217,7 @@ ul{
     background-image: url("https://oishii.com/cdn/shop/files/2023.02_JFONG_Oishii_Koyo_Berry_High_Res_002_2160x.jpg?v=1677255226");
     background-size: cover;
     background-position: 50%;
-    position: relative;
     z-index: 0;
-}
-
-.overlay::before {
-    content: "";
-    background: black;
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    opacity: 0.25;
-    height: 100%;
-    width: 100%;
 }
 
 .introducing-outer-container {
@@ -185,7 +226,6 @@ ul{
 
 .introducing-inner-container {
     margin: 0 50px;
-    position: relative;
 }
 
 .introducing-block {
@@ -193,21 +233,7 @@ ul{
     color: white;
 }
 
-.delay {
-    opacity: 0;
-    animation: fadeIn 0.3s ease-in-out forwards;
-    animation-delay: 1s;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
 .introducing-block h1{
-    font-family: "Tiempos Headline Light", serif;
-    font-weight: 100;
     font-size: 40px;
     display: block;
     width: 380px;
@@ -216,25 +242,9 @@ ul{
 
 .introducing-block p {
     font-size: 14px;
-    display: block;
     width: 380px;
-    margin-bottom: 20px;
-}
-
-.u-link {
-    font-size: 14px;
-    display: inline-block;
-    text-decoration: underline;
-    text-underline-offset: 9px;
-    padding: 3px 0;
-}
-
-.u-link:hover {
-    text-decoration: none;
-}
-
-.u-link.link::after {
-    bottom: -4px;
+    margin:5px 0 15px;
+    line-height: 19px;
 }
 
 .press-logo-container {
@@ -255,25 +265,25 @@ ul{
     height: 26px;
 }
 
-.section{
+.main-item-section{
     margin-bottom: 60px;
 }
 
-.wt {
-    color: white;
-}
-
-.pair-container {
-    margin: 0 50px
-}
-
-.single-part-container {
-    padding: 60px 20px;
-    width: 50%;
+.main-item-container {
+    margin: 0 50px;
     height: 800px;
 }
 
-.single-part-container.overlay::before {
+.berries-types {
+    color: white;
+}
+
+.image-text-container {
+    padding: 60px 20px;
+    width: 50%;
+}
+
+.berries-types .overlay::before {
     opacity: 0.2;
 }
 
@@ -288,56 +298,55 @@ ul{
     overflow: hidden;
 }
 
-.background-pic img {
-    width: 100%;
-    position: absolute;
+.berries-types .background-pic img {
     top: -20px
 }
 
-.background-pic.omakase img  {
+.berries-types .background-pic.omakase img  {
     top: -60px
 }
 
-.content {
+.text-content {
     margin: 0 100px;
     text-align: center;
 }
 
-.content h2 {
-    font-weight: 100;
+.text-content h2 {
     font-size: 32px;
-    z-index: 1;
-    font-family: "Tiempos Headline Light", serif;
     margin-bottom: 5px;
 }
 
-.content p {
+.text-content p {
     font-size: 14px;
-    padding-bottom: 30px;
+    padding: 0 20px 30px;
 }
 
-.content a {
-    font-size: 14px;
-    display: inline-block;
-    text-decoration: underline;
-    text-underline-offset: 9px;
-    margin-top: 550px;
+.text-content a {
+    margin-top: 545px;
 }
 
-.koyo-glass img {
-    position: absolute;
+.washington .image-container,
+.about-all-berries .image-container {
+    width: 50%;
+}
+
+.washington .text-container,
+.about-all-berries .text-container {
+    height: 100%;
+    width: 51%;
+}
+
+.washington .background-pic img {
     top: -145px
 }
 
-.washington {
+.washington .text-container {
     background-color: #f0ece1;
     padding: 120px;
 }
 
 .washington h2 {
-    font-weight: 100;
     font-size: 32px;
-    font-family: "Tiempos Headline Light", serif;
     margin-bottom: 10px;
 }
 
@@ -346,48 +355,32 @@ ul{
 }
 
 .washington a,
-.oishii-berries a {
-    display: inline-block;
-    text-decoration: underline #da2924;
-    text-underline-offset: 9px;
-    padding: 5px 0;
+.about-all-berries a {
+    text-decoration-color: #da2924;
     margin-top: 15px;
 }
 
 .washington a.link::after,
-.oishii-berries a.link::after {
+.about-all-berries a.link::after {
     background-color: #da2924;
-    bottom: -3px;
 }
 
-.oishii-berries {
+.about-all-berries .text-container {
     padding: 30px 120px 30px 50px;
 }
 
-.oishii-berries h2 {
-    font-weight: 100;
+.about-all-berries h2 {
     font-size: 32px;
-    font-family: "Tiempos Headline Light", serif;
     margin-bottom: 10px;
 }
 
-.oishii-berries h3 {
-    font-weight: 100;
+.about-all-berries h3 {
     font-size: 24px;
-    font-family: "Tiempos Headline Light", serif;
+    line-height: 29px;
 }
 
-.oishii-berries a {
-    margin-top: 0;
-}
-
-.oishii-berries a.link::after {
-    bottom: -2px;
-}
-
-.oishii-berries .background-pic img {
-    position: absolute;
-    top: -60px;
+.about-all-berries .background-pic img {
+    top: -110px;
 }
 
 /*-----FOOTER-----*/
@@ -484,6 +477,7 @@ ul{
     padding: 0;
     text-decoration: underline;
     text-underline-offset: 6px;
+    cursor: pointer;
 }
 
 input:focus-visible {
