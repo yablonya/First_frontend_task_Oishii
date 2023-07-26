@@ -20,6 +20,14 @@ h1, h2, h3 {
     font-family: "Tiempos Headline Light", serif;
 }
 
+button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+}
+
 .f {
     display: flex;
 }
@@ -104,6 +112,14 @@ h1, h2, h3 {
 
 .u-link.link::after {
     bottom: -1.5px;
+}
+
+.image-block {
+    position: absolute;
+    top: 0;
+    display: block;
+    height: auto;
+    width: auto;
 }
 
 .background-pic {
@@ -500,6 +516,8 @@ h1, h2, h3 {
 }
 
 .testimonials.outer-container {
+    position: relative;
+    z-index: 2;
     background-color: #d5e1d6;
     padding: 50px 0;
     margin-bottom: 0;
@@ -547,9 +565,40 @@ h1, h2, h3 {
     transform: none;
 }
 
+.testimonials-video button {
+    position: absolute;
+    z-index: 10;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    text-transform: uppercase;
+}
+
+.testimonials-video .volume-button {
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #da2924;
+    color: white;
+    bottom: 20px;
+    left: 20px;
+}
+
+.testimonials-video .play-button {
+    background-color: initial;
+    color: #da2924;
+    bottom: 20px;
+    right: 20px;
+}
+
+.testimonials-video .volume-button svg {
+    width: 18px;
+    height: 18px;
+}
+
 .banner.outer-container {
     padding: 50px 0;
     margin-bottom: 0;
+    overflow: hidden;
 }
 
 .banner.inner-container {
@@ -606,15 +655,131 @@ h1, h2, h3 {
 .sign-up-button.link::after {
     background-color: #da2924;
     bottom: -0.5px;
+}
 
+.left-hand.image-container {
+    top: -36px;
+    left: -80px;
+}
+
+.right-hand.image-container {
+    top: -105px;
+    right: -59px;
+}
+
+.left-hand.image-block {
+    left: 0;
+}
+
+.right-hand.image-block {
+    right: 0;
+}
+
+.left-hand.image-block img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 400px;
+    overflow: hidden;
+}
+
+.right-hand.image-block img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 390px;
+    overflow: hidden;
+}
+
+.right-hand.image-container.delay {
+    animation-delay: 1.5s;
 }
 
 /*-----FOOTER-----*/
 
-.footer {
+.instagram-feed.block {
+    height: 247.79px;
+}
+
+.instagram-feed .grid-item {
+    width: 16.667%;
+}
+
+.grid-item {
+    overflow: hidden;
+}
+
+.grid-item:first-child .background-pic img{
+    top: -27px
+}
+
+.grid-item:nth-child(2) .background-pic img{
+    top: -95px
+}
+
+.grid-item:nth-child(3) .background-pic img{
+    top: -95px
+}
+
+.grid-item:nth-child(4) .background-pic img{
+    top: -32px
+}
+
+.grid-item:nth-child(5) .background-pic img{
+    top: -95px
+}
+
+.grid-item:last-child .background-pic img{
+    top: -32px
+}
+
+.instagram-feed .grid-item a {
+    display: block;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.instagram-feed .inst-container:hover::before {
+    opacity: 0.35;
+}
+
+.grid-item .inst-container:hover {
+    opacity: 1;
+}
+
+.grid-item.overlay::before {
+    opacity: 0;
+}
+
+.grid-item svg {
+    position: relative;
+    z-index: 2;
+    color: white;
+    height: 22px;
+    width: 22px;
+}
+
+.inst-container {
+    height: 100%;
+    opacity: 0;
+}
+
+.inst-container .inst-block {
+    width: 100%;
+    justify-content: center;
+}
+
+.grid-item .background-pic {
+    overflow: unset;
+}
+
+.footer-red-container {
     background-color: #da2924;
     color: white;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .footer-container {
@@ -630,7 +795,7 @@ h1, h2, h3 {
 }
 
 .footer-logo-block {
-    width: 23%;
+    width: 24%;
 }
 
 .footer-logo-img {
@@ -657,7 +822,7 @@ h1, h2, h3 {
 }
 
 .footer-sign-up-form-block {
-    width: 43%;
+    width: 42%;
 }
 
 .form-header p:first-child {
@@ -695,15 +860,10 @@ h1, h2, h3 {
 }
 
 .sign-up-button {
-    background: none;
-    border: none;
     color: white;
-    font-family: inherit;
     font-size: 14px;
-    padding: 0;
     text-decoration: underline;
     text-underline-offset: 6px;
-    cursor: pointer;
 }
 
 input:focus-visible {
@@ -740,6 +900,10 @@ input:focus-visible {
 .middle-part {
     grid-column-gap: 23px;
     column-gap: 23px;
+}
+
+.middle-part a:first-child {
+    margin-left: 50px;
 }
 
 .dot {
